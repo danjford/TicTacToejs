@@ -6,8 +6,7 @@
   "author": "danjford <github.com/danjford>",
   "license": "MIT",
   "scripts": {
-    "test": "mocha test",
-    "test-coverage": "istanbul cover --report json node_modules/.bin/_mocha test/**/*.js"
+    "test": "mocha test"
   },
   "repository": {
     "type": "git",
