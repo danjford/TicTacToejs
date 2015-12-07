@@ -1,0 +1,8 @@
+{
+  "ecmaFeatures": {
+    "spread": true,
+    "destructuring": true,
+    "generators": true,
+    "classes": true
+  }
+}

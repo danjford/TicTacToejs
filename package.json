@@ -1,0 +1,39 @@
+{
+  "name": "TicTacToe",
+  "version": "1.2.0",
+  "description": "Creating TicTacToe with an AI player in JavaScript",
+  "main": "src/game.js",
+  "author": "danjford <github.com/danjford>",
+  "license": "MIT",
+  "scripts": {
+    "test": "mocha test",
+    "test-coverage": "istanbul cover --report json node_modules/.bin/_mocha test/**/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danjford/TicTacToejs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/danjford/TicTacToejs/issues"
+  },
+  "homepage": "https://github.com/danjford/TicTacToejs",
+  "devDependencies": {
+    "babel-polyfill": "^6.3.13",
+    "babel-preset-es2015": "^6.3.13",
+    "babelify": "^7.2.0",
+    "chai": "^3.4.1",
+    "grunt": "^0.4.5",
+    "grunt-browserify": "^4.0.1",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-copy": "^0.8.2",
+    "grunt-contrib-uglify": "^0.11.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-eslint": "^17.3.1",
+    "grunt-mocha-test": "^0.12.7",
+    "grunt-stripcomments": "^0.4.0",
+    "istanbul": "^0.4.1",
+    "matchdep": "^0.3.0",
+    "mocha": "^2.3.4"
+  }
+}
