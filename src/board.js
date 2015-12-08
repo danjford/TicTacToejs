@@ -5,7 +5,6 @@ function Board() {
   createBoard();
 }
 
-
 /**
  * Creates the a 9 square TicTacToe board
  * @return {Void}, doesn't return anything
@@ -22,7 +21,6 @@ function createBoard() {
 
 }
 
-
 /**
  * Checks the rows to see if there is a winner
  * @return {String|Boolean}, returns the player or false if nobody has one
@@ -35,11 +33,11 @@ Board.prototype.checkRows = function() {
       return 'X';
     } else if (board[i][0] + board[i][1] + board[i][2] === 3) {
       return 'O';
-    } else {
-      return false;
     }
 
   };
+
+  return false;
 
 };
 
@@ -55,11 +53,11 @@ Board.prototype.checkColumns = function() {
       return 'X';
     } else if (board[0][i] + board[1][i] + board[2][i] === 3) {
       return 'O';
-    } else {
-      return false;
     }
 
   };
+
+  return false;
 
 };
 
@@ -73,9 +71,9 @@ Board.prototype.checkDiagonals = function() {
       return 'X';
   } else if ( (board[0][0] + board[1][1] + board[2][2]) === 3 || (board[0][2] + board[1][1] + board[2][0]) === 3) {
       return 'O';
-  } else {
-      return false;
   }
+
+  return false;
 
 };
 
