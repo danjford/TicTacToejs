@@ -34,10 +34,9 @@ Player.prototype.createMove = function(board, position) {
 
   position = normaliseMove(position);
 
-  board.setPosition(position, this.player);
+  return board.setPosition(position, this.player);
 
 };
-
 
 module.exports = Player;
 },{}]},{},[1])(1)

@@ -153,7 +153,6 @@ function Board() {
   createBoard();
 }
 
-
 /**
  * Creates the a 9 square TicTacToe board
  * @return {Void}, doesn't return anything
@@ -169,7 +168,6 @@ function createBoard() {
   };
 
 }
-
 
 /**
  * Checks the rows to see if there is a winner
@@ -261,6 +259,12 @@ Board.prototype.setPosition = function(position, player) {
 
 };
 
+Board.prototype.removePosition = function(position) {
+
+  board[position[0]][position[1]] = 0;
+
+};
+
 /**
  * Checks the board if it is in stale made
  * @return {Boolean}, false if it is not in Stale Mate, else true.
@@ -296,7 +300,6 @@ Board.prototype.getWinner = function() {
   return this.checkRows() || this.checkColumns() || this.checkDiagonals();
 
 };
-
 
 module.exports = Board;
 },{"helpers.js":2}]},{},[4])(4)

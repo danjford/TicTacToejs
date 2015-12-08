@@ -105,12 +105,13 @@
   <script src='../node_modules/ractive/ractive.js'></script>
   <script type="text/javascript" src="board.js"></script>
   <script type="text/javascript" src="player.js"></script>
+  <script type="text/javascript" src="agent.js"></script>
 
   <script type="text/javascript">
 
     var board = new Board(),
       player1 = new Player('X'),
-      player2 = new Player('O');
+      player2 = new Agent('O');
 
     var ractive = new Ractive({
       el: '#container',
@@ -120,25 +121,42 @@
 
     ractive.on('setPlayer', function(target, player, position) {
 
+      var _this = this;
+
       if(this.get('winner')) return;
 
-      var  currentPlayer = this.get('currentPlayer');
+      var currentPlayer = this.get('currentPlayer');
 
-      if (currentPlayer === 0) {
-        player1.createMove(board, position);
-      } else {
-        player2.createMove(board, position);
-      }
+      player1.createMove(board, position).then(function() {
+
+        _this.set('board', board.getBoard());
+        _this.set('currentPlayer', currentPlayer === 1 ? 0 : 1);
+        _this.fire('agentMove');
+
+      });
+
+    });
+
+    ractive.on('agentMove', function() {
+
+      if(this.get('winner')) return;
+
+      var currentPlayer = this.get('currentPlayer');
+
+      player2.createMove(board);
 
       this.set('board', board.getBoard());
-      this.set('currentPlayer', currentPlayer === 1 ? 0 : 1);
+      this.set('currentPlayer', currentPlayer === 0 ? 1 : 0);
 
     });
 
     ractive.on('restartGame', function() {
       board = new Board();
       this.set('board', board.getBoard());
+      this.set('currentPlayer', 0);
     });
+
+
 
     ractive.observe('board', function() {
 

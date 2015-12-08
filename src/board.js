@@ -111,6 +111,12 @@ Board.prototype.setPosition = function(position, player) {
 
 };
 
+Board.prototype.removePosition = function(position) {
+
+  board[position[0]][position[1]] = 0;
+
+};
+
 /**
  * Checks the board if it is in stale made
  * @return {Boolean}, false if it is not in Stale Mate, else true.

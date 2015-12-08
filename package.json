@@ -2,7 +2,7 @@
   "name": "TicTacToe",
   "version": "1.2.0",
   "description": "Creating TicTacToe with an AI player in JavaScript",
-  "main": "src/game.js",
+  "main": "src/main.js",
   "author": "danjford <github.com/danjford>",
   "license": "MIT",
   "scripts": {
